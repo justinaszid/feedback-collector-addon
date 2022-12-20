@@ -1,0 +1,23 @@
+{
+  "name": "Demo - Feedback collector",
+  "description": "Collecting feedback for future improvements / quick wins",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": [
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "ctx.js"
+  },
+  "action": {
+    "default_icon": "demo.png",
+    "default_title": "Demo - Feedback collector",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "demo.png",
+    "48": "demo.png",
+    "128": "demo.png"
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #thanks {
+        display: none;
+
+        border: 1px solid #fff;
+        letter-spacing: 0.1rem;
+        overflow: hidden;
+        padding: 4px 6px;
+        position: relative;
+        text-align: center;
+        font-size: 10px;
+        color: #fff;
+        font-family: "Monaco";
+        margin-bottom: 5px;
+      }
+
+      input#category_specify,
+      input#team_specify {
+        display: none;
+        padding: 5px;
+        margin-bottom: 5px;
+        min-width: 150px;
+        width: auto;
+      }
+
+      #wholeBody {
+        background-image: linear-gradient(
+          -90deg,
+          rgb(24, 188, 207) 10%,
+          rgb(85, 227, 196) 100%
+        );
+        height: 425px;
+        width: 360px;
+        overflow: scroll;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: "Copperplate";
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      #explanation {
+        border: 1px solid #fff;
+        cursor: help;
+        letter-spacing: 0.1rem;
+        overflow: hidden;
+        padding: 4px 6px;
+        position: relative;
+        text-align: center;
+        font-size: 10px;
+        color: #fff;
+        font-family: "Monaco";
+      }
+
+      .button {
+        border: 1px solid #fff;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        overflow: hidden;
+        padding: 4px 6px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 10px;
+        transition: background 5s cubic-bezier(0.19, 1, 0.22, 1),
+          border 1s cubic-bezier(0.19, 1, 0.22, 1),
+          color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        user-select: none;
+      }
+
+      .button:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: #fff;
+        box-shadow: 0 0 5px rgba(255, 245, 245, 0.8);
+        transition: background 0s;
+      }
+
+      #devx_form {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      div.form {
+        display: block;
+        text-align: center;
+      }
+
+      #devx_form #submitButton {
+        min-width: 261px;
+        margin-top: 5px;
+      }
+
+      #devx_form input {
+        padding: 5px;
+        margin-bottom: 3px;
+        min-width: 248px;
+        width: auto;
+      }
+
+      #devx_form select {
+        padding: 5px;
+        margin-bottom: 3px;
+        min-width: 262px;
+        width: auto;
+      }
+
+      textarea {
+        resize: none;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body id="wholeBody">
+    <h1>Feedback Collector</h1>
+    <br />
+    <div id="explanation">
+      See a bug in platform? Maybe something is getting in your way or slowing
+      you down? Unnecesary step? You simply do not like it? <b>Let us know!</b>
+    </div>
+    <br />
+    <div id="thanks">Thank you! Have anything else to share?</div>
+    <div class="form">
+      <form id="devx_form">
+        <select id="category_select" required>
+          <option value="">*Select Category</option>
+          <option value="CICD">CI/CD</option>
+          <option value="Documentation">Documentation</option>
+          <option value="Infrastructure">Infrastructure</option>
+          <option value="Gitlab">Gitlab</option>
+          <option value="Learning">Learning</option>
+          <option value="Packges">Packages</option>
+          <option value="Permissions">Permissions</option>
+          <option value="Slack">Slack</option>
+          <option value="Tools">Tools</option>
+          <option value="other">Other</option>
+        </select>
+        <br />
+        <input type="text" placeholder="*Category" id="category_specify" />
+
+        <select id="team_select" required>
+          <option value="">*Select Team</option>
+          <option value="Team_A">Team_A</option>
+          <option value="Team_B">Team_B</option>
+          <option value="Team_C">Team_C</option>
+          <option value="other">Other</option>
+        </select>
+        <br />
+
+        <input type="text" placeholder="*Team" id="team_specify" />
+
+        <input type="text" id="dev_name" placeholder="Your name" /><br />
+        <textarea
+          id="feedback_comment"
+          name="story"
+          rows="5"
+          cols="30"
+          placeholder="*Write your feedback"
+          required
+        ></textarea
+        ><br />
+        <input id="submitButton" type="submit" class="button" />
+      </form>
+    </div>
+  </body>
+</html>
